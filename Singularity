@@ -10,7 +10,15 @@ From: dynverse/dynwrap:r
 %labels
     version 0.1.4
 
+%setup
+    mkdir /scratchLocal
+    mkdir /pbtech_mounts
+    mkdir /pbtech_mounts/softlib001
+    mkdir /athena
+    mkdir /zenodotus
+
 %files
+
     . /code
 
 %post
