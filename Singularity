@@ -10,18 +10,26 @@ From: dynverse/dynwrap:r
 %labels
     version 0.1.4
 
-%setup
-    mkdir /scratchLocal
-    mkdir /pbtech_mounts
-    mkdir /pbtech_mounts/softlib001
-    mkdir /athena
-    mkdir /zenodotus
+
+    
+    
+    
+    
+    
 
 %files
 
     . /code
 
 %post
+    mkdir /scratchLocal
+    mkdir /pbtech_mounts
+    mkdir /pbtech_mounts/softlib001
+    mkdir /athena
+    mkdir /zenodotus
+
+
+
     chmod -R 755 '/code'
     apt-get -y install libudunits2-dev
     Rscript -e 'devtools::install_cran("udunits2", configure.args =  c(udunits2 = "--with-udunits2-include=/usr/include/udunits2"))'
